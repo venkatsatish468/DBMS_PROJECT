@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Application</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+  <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.ico">
+  <script src="https://kit.fontawesome.com/3d5592e29f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+      <div class="inner">
+        <h3 class="masthead-brand"><i class="fas fa-clinic-medical hosicon"></i> Ramaiah Clinic</h3>
+        <nav class="nav nav-masthead justify-content-center">
+          <a class="nav-link active" href="#">Home</a>
+          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="#">Contact</a>
+        </nav>
+      </div>
+
+  <div class="container inputform">
+  <form action="/application" method="post">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="firstName">Firstname</label>
+        <input type="text" class="form-control" name="firstName" placeholder="Jhon">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="lastName">Lastname</label>
+        <input type="text" class="form-control" name="lastName" placeholder="alex">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="userEmail">Email</label>
+      <input type="email" class="form-control" name="userEmail" placeholder="xyz@email.com">
+    </div>
+    <div class="form-group">
+      <label for="userAddress">Address</label>
+      <input type="text" class="form-control" name="userAddress" placeholder="house number, street, area">
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="userCity">City</label>
+        <input type="text" class="form-control" name="userCity">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="userState">State</label>
+        <select id="inputState" class="form-control" name="userState">
+          <option selected>Choose...</option>
+          <option>Karnataka</option>
+          <option>Andhra Pradesh</option>
+          <option>Tamil Nadu</option>
+        </select>
+      </div>
+      <div class="form-group col-md-2">
+        <label for="userZip">Zip</label>
+        <input type="text" class="form-control" name="userZip">
+      </div>
+    </div>
+    <div class="form-group col-lg-6">
+      <label for="phNumber">Phone Number</label>
+      <input type="text" class="form-control" name="phNumber">
+    </div>
+    <div class="form-group">
+      <label for="reason">Reason</label>
+      <textarea class="form-control" name="reason" rows="3" placeholder="cold, fever etc."></textarea>
+    </div>
+    <div class="form-group">
+      <label for="date">Appointment Date</label>
+      <input type="date" name="date" date="date">
+    </div>
+    <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck">
+        <label class="form-check-label" for="gridCheck">
+          I agree that i have no travel history and flu-like symptomes.
+        </label>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-outline-primary clickButton" name="submit">Book Appointment</button>
+  </form>
+</div>
+</body>
+</html>
