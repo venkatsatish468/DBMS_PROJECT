@@ -24,8 +24,8 @@
             <h3 class="masthead-brand"><i class="fas fa-clinic-medical hosicon"></i> Ramaiah Clinic</h3>
             <nav class="nav nav-masthead justify-content-center">
               <a class="nav-link active" href="/">Home</a>
-              <a class="nav-link" href="#">Features</a>
-              <a class="nav-link" href="">Contact</a>
+              <a class="nav-link" href="#">Add Doctor</a>
+              <a class="nav-link" href="">Arrived list</a>
             </nav>
           </div>
         </header>
@@ -34,21 +34,28 @@
 <!-- </div> -->
 
  <!-- <div class="row"> -->
+  <%for(var i=0; i<userList.length; i++){%>
 
-  <div class="col-lg-4 col-md-6 col-sm-12 cardBox cardCustom d-flex justify-content-center">
+    <div class="col-lg-4 col-md-6 col-sm-12 cardBox cardCustom d-flex justify-content-center">
      <div class="card" style="width: 21rem;">
        <div class="card-body cardCustom ">
-       <h5 class="card-title">Name: <%= nameprint %></h5>
-       <p class="card-text">mobile number: <%= phprint %></p>
+       <h5 class="card-title">Name: <%= userList[i].userName %></h5>
+       <p class="card-text">mobile number: <%= userList[i].mobileNumber %></p>
        <p class="card-text">Appointment time: 2:30.</p>
-       <p class="card-text">Appointment date: 30-12-2000.</p>
+       <p class="card-text">Appointment date: <%= userList[i].date %>.</p>
+       <p class="card-text">Assigned Doctor: <%= userList[i].doctorName %>.</p>
        <p>
-       <button href="#" class="btn btn-outline-success"> <i class="fas fa-check"></i> Arrived</button>
-       <button href="#" class="btn btn-outline-danger"> <i class="fas fa-times"></i> Cancel Appointment</button>
+         <form class="formStyle" action="/arrived" method="post">
+         <button href="#" type="submit" class="btn btn-outline-success" name="changeButton" value="<%=userList[i]._id %>"> <i class="fas fa-check"></i> Arrived</button>
+         </form>
+         <form class="" action="/delete" method="post">
+         <button href="#" type="submit" class="btn btn-outline-danger" name="changeButton" value="<%=userList[i]._id %>"> <i class="fas fa-times"></i> Cancel Appointment</button>
+         </form>
       </p>
       </div>
     </div>
    </div>
+  <%}%>
 
 </div>
 </div>

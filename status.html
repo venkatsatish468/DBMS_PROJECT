@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -23,19 +22,10 @@
 <script src="https://kit.fontawesome.com/3d5592e29f.js" crossorigin="anonymous"></script>
 </head>
   <body class="text-center loginBody">
-    <form method="POST" action="/login" class="form-signin">
+    <form method="POST" action="/status" class="form-signin">
   <i class="fas fa-clinic-medical hosicon"></i>
-  <h1 class="h3 mb-3 font-weight-normal">Login only for Clinic Doctors</h1>
-  <label for="inputEmail" class="sr-only">Email address</label>
-  <input type="email" name="inputEmail" class="form-control" placeholder="venkatsatish@gmail.com" required autofocus>
-  <label for="inputPassword" class="sr-only">Password</label>
-  <input type="password" name="inputPassword" class="form-control" placeholder="Password:1234" required>
-  <div class="checkbox mb-3">
-    <label>
-      <input type="checkbox" value="remember-me"> Remember me
-    </label>
-  </div>
-  <button class="btn btn-lg btn-outline-secondary clickButton" type="submit">Sign in</button>
+  <input type="text" name="inputPhNumber" class="form-control" placeholder="Mobile Number" required autofocus>
+  <button class="btn btn-lg btn-outline-secondary clickButton" type="submit">Check status</button>
   </form>
 </body>
 </html>

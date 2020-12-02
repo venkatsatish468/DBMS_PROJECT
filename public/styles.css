@@ -20,6 +20,9 @@ body{
 .big{
     text-align: center;
 }
+.formStyle{
+  padding-bottom: 1rem;
+}
 
 /*
  * Globals
