@@ -154,3 +154,17 @@ body {
 .mastfoot {
   color: rgba(255, 255, 255, .5);
 }
+
+.getList{
+  padding-top: 3rem;
+}
+.viewList{
+  color: white;
+  padding-top: 5rem;
+}
+.textColor{
+  color:orangered;
+}
+.rowColor{
+  color: white;
+}

@@ -65,5 +65,9 @@ body {
 }
 .clickButton{
   color: white;
+  padding-top: 1rem;
+}
+.status{
+  padding: 10px;
 }
 

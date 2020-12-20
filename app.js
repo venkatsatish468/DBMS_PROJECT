@@ -131,15 +131,6 @@ app.get("/application",function(req,res){
 });
 
 app.post("/application",function(req,res){
-    // var docNameList=[];
-    // Doctor.find(function(err,doctorList){
-    //     var num = Math.floor((Math.random() * doctorList.length));
-    //     // console.log(num);
-    //     // console.log(doctorList);
-    //      console.log(doctorlist[num]);
-          
-    // });
-    // console.log(docNameList);
     var num = Math.floor((Math.random() * n.length));
     var dateTyped = req.body.date;
     const user = new User({
@@ -192,6 +183,77 @@ app.post("/delete",function(req,res){
         }
     });
     res.redirect("/appointments");
+});
+
+app.get("/status",function(req,res){
+    res.sendFile(__dirname + "/status.html");
+});
+
+app.post("/status",function(req,res){
+    var mobileNum = req.body.inputPhNumber;
+    User.findOne({mobileNumber:mobileNum},function(err,user){
+        if(err){
+            console.log(err);
+        }
+        if(user){
+            res.render("status",{users:user});
+        }
+        else{
+            res.sendFile(__dirname + "/noAppointment.html");
+            }
+    });
+});
+
+app.get("/getList",function(req,res){
+
+});
+
+app.post("/statusDelete",function(req,res){
+    const clickedId = req.body.changeButton;
+    User.findByIdAndRemove(clickedId,function(err){
+        if(err){
+            console.log(err);
+        }
+        res.sendFile(__dirname + "/deleted.html");
+
+    });
+});
+
+app.post("/update",function(req,res){
+    var id = req.body.updateButton;
+    User.findOne({_id : id},function(err,user){
+        if(err){
+            console.log(err);
+            
+        }
+        else{
+            res.render("updateDate",{users:user});
+        }
+    });
+});
+app.post("/updateDate/:userId",function(req,res){
+    // console.log(req.params.userId);
+    var id = req.params.userId;
+    var updateDate = req.body.date;
+    User.updateOne({_id:id},{$set:{date:updateDate}},function(err,res){
+        if(err){
+            console.log(err);
+        }
+    });
+    res.sendFile(__dirname + "/updated.html");
+    
+});
+
+app.post("/getList",function(req,res){
+    User.find({},function(err,users){
+        if(err){
+            console.log(err);
+            
+        }
+        else{
+            res.render("list",{userList:users});
+        }
+    });
 });
 
 app.listen(3000, function() {
